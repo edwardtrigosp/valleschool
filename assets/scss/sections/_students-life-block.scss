@@ -1,0 +1,317 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Students Life Block Section
+--------------------------------------------------------------*/
+.students-life-block {
+  .content-wrapper {
+    .section-tag {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 40px;
+        height: 1px;
+        background: var(--accent-color);
+      }
+    }
+
+    h2 {
+      font-size: 2.75rem;
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 2rem;
+      color: var(--heading-color);
+
+      @media (max-width: 768px) {
+        font-size: 2.25rem;
+      }
+    }
+
+    .description {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: color-mix(in srgb, var(--default-color), transparent 25%);
+      margin-bottom: 3rem;
+    }
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--accent-color);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.95rem;
+        color: color-mix(in srgb, var(--default-color), transparent 40%);
+        font-weight: 300;
+      }
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  .action-links {
+    .primary-link {
+      color: var(--heading-color);
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 1rem;
+      position: relative;
+      transition: all 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 1px;
+        background: var(--accent-color);
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: var(--accent-color);
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .visual-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    height: 100%;
+
+    .main-visual {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+
+      .overlay-badge {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: var(--surface-color);
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+        i {
+          color: var(--accent-color);
+          font-size: 1.25rem;
+        }
+
+        span {
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: var(--heading-color);
+        }
+      }
+    }
+
+    .secondary-visuals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+
+      .small-visual {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+
+          .visual-caption {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .visual-caption {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+          padding: 2rem 1.5rem 1.5rem;
+          opacity: 0;
+          transform: translateY(10px);
+          transition: all 0.3s ease;
+
+          span {
+            color: var(--contrast-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .highlights-section {
+    margin-top: 6rem;
+
+    .highlight-card {
+      background: var(--surface-color);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .highlight-image {
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 220px;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+      }
+
+      &:hover .highlight-image img {
+        transform: scale(1.1);
+      }
+
+      .highlight-content {
+        padding: 2rem;
+
+        h5 {
+          font-size: 1.25rem;
+          font-weight: 500;
+          margin-bottom: 1rem;
+          color: var(--heading-color);
+        }
+
+        p {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: color-mix(in srgb, var(--default-color), transparent 30%);
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .content-wrapper {
+      margin-bottom: 2rem;
+    }
+
+    .visual-grid {
+      .main-visual img {
+        height: 300px;
+      }
+
+      .secondary-visuals .small-visual img {
+        height: 140px;
+      }
+    }
+
+    .highlights-section {
+      margin-top: 4rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .stats-row {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .visual-grid {
+      .main-visual {
+        .overlay-badge {
+          top: 20px;
+          right: 20px;
+          padding: 0.75rem 1.25rem;
+        }
+      }
+
+      .secondary-visuals {
+        grid-template-columns: 1fr;
+
+        .small-visual img {
+          height: 200px;
+        }
+      }
+    }
+
+    .highlights-section {
+      margin-top: 3rem;
+
+      .highlight-card .highlight-content {
+        padding: 1.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .visual-grid .main-visual .overlay-badge {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin-top: 1rem;
+      display: inline-flex;
+    }
+  }
+}

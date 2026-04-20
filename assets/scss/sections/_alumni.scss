@@ -1,0 +1,628 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Alumni Section
+--------------------------------------------------------------*/
+.alumni {
+
+  // Alumni intro section
+  .alumni-intro {
+    padding: 5rem 0 6rem;
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .intro-text {
+      h2 {
+        font-size: 3.5rem;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        letter-spacing: -1px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 3rem;
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+      }
+
+      .metrics-row {
+        display: flex;
+        gap: 3rem;
+
+        .metric-item {
+          .metric-number {
+            display: block;
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: var(--accent-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+          }
+
+          .metric-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: color-mix(in srgb, var(--default-color), transparent 40%);
+          }
+        }
+      }
+    }
+
+    .intro-visual {
+      .visual-wrapper {
+        position: relative;
+
+        img {
+          border-radius: 8px;
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 20px;
+          left: -20px;
+          right: 20px;
+          bottom: -20px;
+          border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+          border-radius: 8px;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  // Success stories section
+  .success-stories {
+    padding: 5rem 0;
+
+    .stories-header {
+      margin-bottom: 4rem;
+
+      h3 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        text-align: center;
+        position: relative;
+
+        &:after {
+          content: '';
+          width: 60px;
+          height: 1px;
+          background-color: var(--accent-color);
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+
+      .story-item {
+        text-align: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-10px);
+
+          .story-image img {
+            transform: scale(1.05);
+          }
+        }
+
+        .story-image {
+          position: relative;
+          margin-bottom: 2rem;
+          overflow: hidden;
+          border-radius: 50%;
+          width: 180px;
+          height: 180px;
+          margin-left: auto;
+          margin-right: auto;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+          }
+
+          .graduation-year {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: var(--surface-color);
+            color: var(--accent-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        .story-content {
+          h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+          }
+
+          .story-role {
+            display: block;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+          }
+
+          .story-link {
+            color: var(--default-color);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+              width: 0;
+              height: 1px;
+              background-color: var(--accent-color);
+              transition: width 0.3s ease;
+            }
+
+            &:hover {
+              color: var(--accent-color);
+
+              &:after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Engagement opportunities section
+  .engagement-opportunities {
+    padding: 5rem 0;
+
+    .opportunities-layout {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .opportunities-content {
+      h3 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+
+      >p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 3rem;
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+      }
+
+      .opportunity-list {
+        .opportunity-item {
+          display: flex;
+          gap: 1.5rem;
+          margin-bottom: 2.5rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            .opportunity-icon {
+              background-color: var(--accent-color);
+              color: var(--contrast-color);
+            }
+          }
+
+          .opportunity-icon {
+            width: 60px;
+            height: 60px;
+            background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+          }
+
+          .opportunity-info {
+            h4 {
+              font-size: 1.2rem;
+              margin-bottom: 0.5rem;
+              font-weight: 500;
+            }
+
+            p {
+              font-size: 0.95rem;
+              line-height: 1.6;
+              margin-bottom: 0.75rem;
+              color: color-mix(in srgb, var(--default-color), transparent 30%);
+            }
+
+            .opportunity-action {
+              font-size: 0.9rem;
+              color: var(--accent-color);
+              font-weight: 500;
+              position: relative;
+
+              &:after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: var(--accent-color);
+                transition: width 0.3s ease;
+              }
+
+              &:hover:after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .opportunities-visual {
+      img {
+        border-radius: 8px;
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // Impact section
+  .impact-section {
+    padding: 5rem 0;
+    position: relative;
+
+    .impact-visual {
+      position: relative;
+      margin-bottom: 4rem;
+
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .impact-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .impact-stat {
+          text-align: center;
+          color: var(--contrast-color);
+
+          .stat-value {
+            display: block;
+            font-size: 4rem;
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+          }
+
+          .stat-description {
+            font-size: 1.1rem;
+            font-weight: 400;
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+
+    .impact-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+      }
+
+      .impact-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .btn-primary {
+          background-color: var(--accent-color);
+          color: var(--contrast-color);
+          padding: 0.875rem 2rem;
+          border-radius: 4px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          border: none;
+
+          &:hover {
+            background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+            transform: translateY(-2px);
+          }
+        }
+
+        .btn-secondary {
+          color: var(--default-color);
+          padding: 0.875rem 2rem;
+          border: 1px solid color-mix(in srgb, var(--default-color), transparent 70%);
+          border-radius: 4px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+
+          &:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+  }
+
+  // Alumni events section
+  .alumni-events {
+    padding: 5rem 0;
+
+    .events-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+
+      h3 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin: 0;
+      }
+
+      .view-all-events {
+        color: var(--accent-color);
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+
+        &:after {
+          content: '→';
+          margin-left: 0.5rem;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover:after {
+          transform: translateX(5px);
+        }
+      }
+    }
+
+    .events-list {
+      .event-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+        transition: all 0.3s ease;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          .event-date {
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
+          }
+        }
+
+        .event-date {
+          flex-shrink: 0;
+          width: 80px;
+          height: 80px;
+          background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+          border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+
+          .month {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+
+          .day {
+            font-size: 1.8rem;
+            font-weight: 300;
+            line-height: 1;
+          }
+        }
+
+        .event-details {
+          flex: 1;
+
+          h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+          }
+
+          .event-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: color-mix(in srgb, var(--default-color), transparent 40%);
+          }
+
+          p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+          }
+
+          .event-register {
+            color: var(--accent-color);
+            font-weight: 500;
+            position: relative;
+
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+              width: 0;
+              height: 1px;
+              background-color: var(--accent-color);
+              transition: width 0.3s ease;
+            }
+
+            &:hover:after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 1200px) {
+    .alumni-intro .intro-text h2 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .alumni-intro .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .engagement-opportunities .opportunities-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .stories-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .events-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 40px 0;
+    }
+
+    .alumni-intro {
+      padding: 3rem 0 4rem;
+
+      .intro-text {
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        .metrics-row {
+          gap: 2rem;
+          justify-content: center;
+        }
+      }
+    }
+
+    .success-stories,
+    .engagement-opportunities,
+    .impact-section,
+    .alumni-events {
+      padding: 3rem 0;
+    }
+
+    .impact-actions {
+      flex-direction: column;
+      align-items: center;
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+
+    .event-card {
+      flex-direction: column;
+      text-align: center;
+
+      .event-date {
+        margin: 0 auto;
+      }
+
+      .event-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
